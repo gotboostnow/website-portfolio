@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wan Muhammad Afiq — IT & Cybersecurity</title>
+  <meta name="description" content="Cybersecurity-focused IT graduate. Penetration testing, SOC labs, and IT operations." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #2563eb;
+      --card: #fafafa;
+      --tag-bg: #f3f4f6;
+      --tag-fg: #374151;
+    }
+    [data-theme="dark"] {
+      --bg: #0f1115;
+      --fg: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #262a33;
+      --accent: #60a5fa;
+      --card: #161a21;
+      --tag-bg: #1f242d;
+      --tag-fg: #cbd5e1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    /* Header */
+    header { margin-bottom: 56px; }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .intro {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      max-width: 60ch;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.9rem;
+    }
+
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease;
+    }
+    .links a:hover { border-bottom-color: var(--accent); }
+
+    /* Sections */
+    section { margin-bottom: 48px; }
+
+    h2 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    /* Skills */
+    .skill-group { margin-bottom: 14px; }
+    .skill-group:last-child { margin-bottom: 0; }
+
+    .skill-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-bottom: 6px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-fg);
+      font-size: 0.78rem;
+      padding: 3px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    /* Projects */
+    .project {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 22px;
+      margin-bottom: 14px;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .project:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .project-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .project-category {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--fg);
+      margin-bottom: 12px;
+    }
+
+    .project-bullet {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+      padding-left: 14px;
+      border-left: 2px solid var(--border);
+    }
+
+    .project .tags { margin-top: 4px; }
+
+    /* Footer */
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--fg);
+      transition: border-color 0.15s ease;
+      z-index: 10;
+    }
+    .theme-toggle:hover { border-color: var(--accent); }
+
+    @media (max-width: 480px) {
+      .container { padding: 48px 18px 64px; }
+      h1 { font-size: 1.4rem; }
+      .project-header { flex-direction: column; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Wan Muhammad Afiq</h1>
+      <p class="subtitle">Cybersecurity & IT Operations · Penang, Malaysia</p>
+      <p class="intro">
+        Cybersecurity-focused IT graduate with hands-on penetration testing experience
+        in enterprise environments. I build labs, break things safely, and document
+        everything so teams can act on it.
+      </p>
+      <div class="links">
+        <a href="mailto:wmafiq@proton.me">Email</a>
+        <a href="https://www.linkedin.com/in/wan-muhammad-afiq-bin-wan-asri-b4b101419" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="resume.pdf" target="_blank">Resume</a>
+      </div>
+    </header>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills</h2>
+
+      <div class="skill-group">
+        <div class="skill-label">Cybersecurity</div>
+        <div class="tags">
+          <span class="tag">Penetration Testing</span>
+          <span class="tag">Vulnerability Assessment</span>
+          <span class="tag">Incident Response</span>
+          <span class="tag">Threat Detection</span>
+          <span class="tag">Firewall Config</span>
+          <span class="tag">Ethical Hacking</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-label">Tools</div>
+        <div class="tags">
+          <span class="tag">Kali Linux</span>
+          <span class="tag">Metasploit</span>
+          <span class="tag">BurpSuite</span>
+          <span class="tag">Nmap</span>
+          <span class="tag">Wireshark</span>
+          <span class="tag">pfSense</span>
+          <span class="tag">John The Ripper</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-label">Development & IT</div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Django</span>
+          <span class="tag">SQL / MySQL</span>
+          <span class="tag">HTML / CSS</span>
+          <span class="tag">VirtualBox / QEMU</span>
+          <span class="tag">Windows Server</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <article class="project">
+        <div class="project-header">
+          <span class="project-title">Home SOC Lab — Threat Detection & IR</span>
+          <span class="project-category">Cybersecurity</span>
+        </div>
+        <p class="project-desc">
+          Virtualized SOC lab for simulating attacks and practicing incident response workflows.
+        </p>
+        <p class="project-bullet">
+          Deployed Security Onion + Wazuh for centralized logging and IDS; documented
+          10 incident response playbooks and 20+ simulated attack vectors.
+        </p>
+        <div class="tags">
+          <span class="tag">Security Onion</span>
+          <span class="tag">Wazuh</span>
+          <span class="tag">pfSense</span>
+          <span class="tag">Kali Linux</span>
+          <span class="tag">Wireshark</span>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-header">
+          <span class="project-title">Python Log Analyzer & Alerting Tool</span>
+          <span class="project-category">Automation</span>
+        </div>
+        <p class="project-desc">
+          Parses system and web server logs, flags anomalies, and sends real-time alerts.
+        </p>
+        <p class="project-bullet">
+          Reduced manual log review time by 70% with regex-based detection of failed
+          logins, privilege escalation, and suspicious IP activity.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Regex</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">SMTP</span>
+          <span class="tag">Linux</span>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-header">
+          <span class="project-title">Active Directory Home Lab</span>
+          <span class="project-category">IT Support</span>
+        </div>
+        <p class="project-desc">
+          Windows Server AD environment simulating enterprise helpdesk and sysadmin tasks.
+        </p>
+        <p class="project-bullet">
+          Managed 50+ users across OUs, configured GPOs for password policy and drive
+          mapping, and documented SOPs for onboarding and offboarding.
+        </p>
+        <div class="tags">
+          <span class="tag">Windows Server</span>
+          <span class="tag">Active Directory</span>
+          <span class="tag">GPO</span>
+          <span class="tag">DNS</span>
+          <span class="tag">PowerShell</span>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-header">
+          <span class="project-title">SMB Vulnerability Assessment Report</span>
+          <span class="project-category">Cybersecurity</span>
+        </div>
+        <p class="project-desc">
+          Full vulnerability assessment on a simulated small business network, delivered
+          as a client-ready report.
+        </p>
+        <p class="project-bullet">
+          Identified 15+ CVSS-scored findings using Nmap, Nessus, and OpenVAS; mapped
+          to MITRE ATT&CK with prioritized remediation guidance.
+        </p>
+        <div class="tags">
+          <span class="tag">Nmap</span>
+          <span class="tag">Nessus</span>
+          <span class="tag">OpenVAS</span>
+          <span class="tag">CVSS</span>
+          <span class="tag">MITRE ATT&CK</span>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-header">
+          <span class="project-title">IT Asset Management Dashboard</span>
+          <span class="project-category">Web Development</span>
+        </div>
+        <p class="project-desc">
+          Django web app to track hardware, licenses, warranty status, and maintenance history.
+        </p>
+        <p class="project-bullet">
+          Built role-based access, CSV export, and warranty expiry alerts for a
+          simulated 100+ asset environment.
+        </p>
+        <div class="tags">
+          <span class="tag">Django</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">Bootstrap</span>
+          <span class="tag">Chart.js</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>© <span id="year"></span> Wan Muhammad Afiq</span>
+      <span>Built with HTML & CSS</span>
+    </footer>
+
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle with localStorage
+    const root = document.documentElement;
+    const icon = document.getElementById('theme-icon');
+
+    function applyTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+
+    function toggleTheme() {
+      const current = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', current);
+      applyTheme(current);
+    }
+
+    // Load saved theme or system preference
+    (function initTheme() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+    })();
+  </script>
+</body>
+</html>
