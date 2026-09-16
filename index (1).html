@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wan Muhammad Afiq — IT & Cybersecurity</title>
+  <meta name="description" content="Cybersecurity-focused IT graduate. Penetration testing, IT operations, and full-stack development." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1a1a1a;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #2563eb;
+      --card: #fafafa;
+      --tag-bg: #f3f4f6;
+      --tag-fg: #374151;
+    }
+    [data-theme="dark"] {
+      --bg: #0f1115;
+      --fg: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #262a33;
+      --accent: #60a5fa;
+      --card: #161a21;
+      --tag-bg: #1f242d;
+      --tag-fg: #cbd5e1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    /* Header */
+    header { margin-bottom: 56px; }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .intro {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      max-width: 60ch;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.9rem;
+    }
+
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease;
+    }
+    .links a:hover { border-bottom-color: var(--accent); }
+
+    /* Sections */
+    section { margin-bottom: 48px; }
+
+    h2 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    /* Skills */
+    .skill-group { margin-bottom: 14px; }
+    .skill-group:last-child { margin-bottom: 0; }
+
+    .skill-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-bottom: 6px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-fg);
+      font-size: 0.78rem;
+      padding: 3px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    /* Experience / Education / Projects */
+    .entry {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 22px;
+      margin-bottom: 14px;
+      transition: border-color 0.15s ease;
+    }
+
+    .entry:hover { border-color: var(--accent); }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+
+    .entry-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .entry-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .entry-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .entry ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .entry ul li {
+      font-size: 0.88rem;
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 6px;
+      color: var(--fg);
+    }
+
+    .entry ul li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+
+    .entry ul li:last-child { margin-bottom: 0; }
+
+    .entry .tags { margin-top: 12px; }
+
+    /* Footer */
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--fg);
+      transition: border-color 0.15s ease;
+      z-index: 10;
+    }
+    .theme-toggle:hover { border-color: var(--accent); }
+
+    @media (max-width: 480px) {
+      .container { padding: 48px 18px 64px; }
+      h1 { font-size: 1.4rem; }
+      .entry-header { flex-direction: column; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Wan Muhammad Afiq</h1>
+      <p class="subtitle">Cybersecurity & IT Operations</p>
+      <p class="intro">
+        Cybersecurity-focused IT graduate with hands-on penetration testing experience
+        in enterprise environments. I build labs, break things safely, and document
+        everything so teams can act on it.
+      </p>
+      <div class="links">
+        <a href="mailto:wmafiq@proton.me">Email</a>
+        <a href="https://www.linkedin.com/in/wan-muhammad-afiq-bin-wan-asri-b4b101419" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="resume.pdf" target="_blank">Resume</a>
+      </div>
+    </header>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills</h2>
+
+      <div class="skill-group">
+        <div class="skill-label">Cybersecurity</div>
+        <div class="tags">
+          <span class="tag">Penetration Testing</span>
+          <span class="tag">Vulnerability Assessment</span>
+          <span class="tag">Risk Assessment</span>
+          <span class="tag">Network Security</span>
+          <span class="tag">Incident Response</span>
+          <span class="tag">Intrusion Detection</span>
+          <span class="tag">Firewall Configuration</span>
+          <span class="tag">Threat Detection & Analysis</span>
+          <span class="tag">Ethical Hacking</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-label">Tools & Platforms</div>
+        <div class="tags">
+          <span class="tag">Kali Linux</span>
+          <span class="tag">Arch Linux</span>
+          <span class="tag">Metasploit</span>
+          <span class="tag">BurpSuite</span>
+          <span class="tag">Nmap</span>
+          <span class="tag">John The Ripper</span>
+          <span class="tag">Wireshark</span>
+          <span class="tag">pfSense</span>
+          <span class="tag">VirtualBox</span>
+          <span class="tag">QEMU/KVM</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-label">Development</div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Django</span>
+          <span class="tag">SQL</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-label">IT Operations</div>
+        <div class="tags">
+          <span class="tag">System Diagnostics</span>
+          <span class="tag">Root-Cause Analysis</span>
+          <span class="tag">IT Troubleshooting</span>
+          <span class="tag">Preventive Maintenance</span>
+          <span class="tag">Hardware/Software Config</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-label">Languages</div>
+        <div class="tags">
+          <span class="tag">English (Native)</span>
+          <span class="tag">Melayu (Native)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <article class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Penetration Tester</span>
+          <span class="entry-meta">Internship · 2026 · 6 Months</span>
+        </div>
+        <div class="entry-sub">Pusat Ekosistem Digital</div>
+        <ul>
+          <li>Uncovered 15+ critical system vulnerabilities across internal network architectures by conducting comprehensive risk assessments, reducing potential data exposure risks by 40%.</li>
+          <li>Orchestrated real-world attack simulations (phishing campaigns, privilege escalation) to evaluate defense mechanisms, producing 5 incident response playbooks.</li>
+          <li>Architected standardized vulnerability documentation and risk reporting framework, improving reporting consistency by 25% and accelerating patch deployment from 14 days to 10 days.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Penetration Testing</span>
+          <span class="tag">Risk Assessment</span>
+          <span class="tag">Incident Response</span>
+          <span class="tag">Metasploit</span>
+          <span class="tag">BurpSuite</span>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Food Service Specialist</span>
+          <span class="entry-meta">Full-Time · 6 Years · 2014-2019 </span>
+        </div>
+        <div class="entry-sub">Penang Food Fantasy (PFF)</div>
+        <ul>
+          <li>Oversaw daily customer service operations during peak hours (12+ hours), de-escalating 50+ complaints per shift and maintaining a 98% customer satisfaction rating.</li>
+          <li>Diagnosed and rectified Point-of-Sale (POS) system malfunctions in real time, achieving 99.9% system uptime during peak operational hours.</li>
+          <li>Translated complex technical POS issues into clear, actionable language for non-technical restaurant management, bridging operations and IT support.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">IT Troubleshooting</span>
+          <span class="tag">Customer Service</span>
+          <span class="tag">Hardware Repair</span>
+          <span class="tag">Communication</span>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Full-Stack Developer</span>
+          <span class="entry-meta">Final Year Project · 1 Year · 2025</span>
+        </div>
+        <div class="entry-sub">SUKSIS Evaluation Management System</div>
+        <ul>
+          <li>Designed and deployed a full-stack web application (Django/SQL) from the ground up to automate semester assessment tracking for 200+ students.</li>
+          <li>Eliminated a 30% margin of manual data entry errors through automated calculation algorithms, reducing result processing from 5 days to 3 days.</li>
+          <li>Developed user guides and facilitated hands-on training for 15 non-technical administrative staff, ensuring 100% system adoption within the first week.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Django</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Python</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">Training</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2>Education</h2>
+
+      <article class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Bachelor's Degree in Computer Science</span>
+          <span class="entry-meta">2021 – 2026</span>
+        </div>
+        <div class="entry-sub">Universiti Malaysia Terengganu (UMT) · Maritime Informatics (Honours) · CGPA: 2.91</div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Diploma in Computer Science</span>
+          <span class="entry-meta">2018 – 2020</span>
+        </div>
+        <div class="entry-sub">Kolej Professional MARA Beranang · CGPA: 2.85</div>
+      </article>
+    </section>
+
+    <!-- PROJECTS & LABS -->
+    <section id="projects">
+      <h2>Projects & Security Labs</h2>
+
+      <article class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Hands-On Security Lab</span>
+          <span class="entry-meta">Personal Project</span>
+        </div>
+        <ul>
+          <li>Designed and configured a virtualized home lab environment with firewall rules (pfSense) and network segmentation.</li>
+          <li>Deployed Wireshark for intrusion detection and traffic analysis, identifying malicious patterns to strengthen defensive strategies.</li>
+          <li>Demonstrates proactive initiative and commitment to practical, hands-on cybersecurity learning.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">pfSense</span>
+          <span class="tag">Wireshark</span>
+          <span class="tag">Network Segmentation</span>
+          <span class="tag">Virtualization</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>© <span id="year"></span> Wan Muhammad Afiq</span>
+      <span>Built with HTML & CSS</span>
+    </footer>
+
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle with localStorage
+    const root = document.documentElement;
+    const icon = document.getElementById('theme-icon');
+
+    function applyTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+
+    function toggleTheme() {
+      const current = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', current);
+      applyTheme(current);
+    }
+
+    // Load saved theme or system preference
+    (function initTheme() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+    })();
+  </script>
+</body>
+</html>
