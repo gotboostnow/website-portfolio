@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wan Muhammad Afiq — IT & Cybersecurity</title>
-  <meta name="description" content="Cybersecurity-focused IT graduate. Penetration testing, SOC labs, and IT operations." />
+  <meta name="description" content="Cybersecurity-focused IT graduate. Penetration testing, IT operations, and full-stack development." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>" />
   <style>
     :root {
@@ -123,57 +123,69 @@
       white-space: nowrap;
     }
 
-    /* Projects */
-    .project {
+    /* Experience / Education / Projects */
+    .entry {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 20px 22px;
       margin-bottom: 14px;
-      transition: border-color 0.15s ease, transform 0.15s ease;
+      transition: border-color 0.15s ease;
     }
 
-    .project:hover {
-      border-color: var(--accent);
-      transform: translateY(-1px);
-    }
+    .entry:hover { border-color: var(--accent); }
 
-    .project-header {
+    .entry-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       gap: 12px;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
 
-    .project-title {
+    .entry-title {
       font-size: 1rem;
       font-weight: 600;
     }
 
-    .project-category {
-      font-size: 0.72rem;
+    .entry-meta {
+      font-size: 0.75rem;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.05em;
       white-space: nowrap;
     }
 
-    .project-desc {
-      font-size: 0.9rem;
-      color: var(--fg);
-      margin-bottom: 12px;
-    }
-
-    .project-bullet {
+    .entry-sub {
       font-size: 0.85rem;
       color: var(--muted);
       margin-bottom: 12px;
-      padding-left: 14px;
-      border-left: 2px solid var(--border);
     }
 
-    .project .tags { margin-top: 4px; }
+    .entry ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .entry ul li {
+      font-size: 0.88rem;
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 6px;
+      color: var(--fg);
+    }
+
+    .entry ul li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+
+    .entry ul li:last-child { margin-bottom: 0; }
+
+    .entry .tags { margin-top: 12px; }
 
     /* Footer */
     footer {
@@ -212,7 +224,7 @@
     @media (max-width: 480px) {
       .container { padding: 48px 18px 64px; }
       h1 { font-size: 1.4rem; }
-      .project-header { flex-direction: column; gap: 2px; }
+      .entry-header { flex-direction: column; gap: 2px; }
     }
   </style>
 </head>
@@ -229,9 +241,11 @@
       <h1>Wan Muhammad Afiq</h1>
       <p class="subtitle">Cybersecurity & IT Operations · Penang, Malaysia</p>
       <p class="intro">
-        Cybersecurity-focused IT graduate with hands-on penetration testing experience
-        in enterprise environments. I build labs, break things safely, and document
-        everything so teams can act on it.
+        Cybersecurity-focused IT graduate with a Bachelor's in Computer Science and
+        hands-on penetration testing experience in enterprise network environments.
+        Proven ability to identify and resolve critical system vulnerabilities using
+        industry-standard tools, combined with strong business communication and
+        analytical problem-solving skills.
       </p>
       <div class="links">
         <a href="mailto:wmafiq@proton.me">Email</a>
@@ -250,145 +264,169 @@
         <div class="tags">
           <span class="tag">Penetration Testing</span>
           <span class="tag">Vulnerability Assessment</span>
+          <span class="tag">Risk Assessment</span>
+          <span class="tag">Network Security</span>
           <span class="tag">Incident Response</span>
-          <span class="tag">Threat Detection</span>
-          <span class="tag">Firewall Config</span>
+          <span class="tag">Intrusion Detection</span>
+          <span class="tag">Firewall Configuration</span>
+          <span class="tag">Threat Detection & Analysis</span>
           <span class="tag">Ethical Hacking</span>
         </div>
       </div>
 
       <div class="skill-group">
-        <div class="skill-label">Tools</div>
+        <div class="skill-label">Tools & Platforms</div>
         <div class="tags">
           <span class="tag">Kali Linux</span>
+          <span class="tag">Arch Linux</span>
           <span class="tag">Metasploit</span>
           <span class="tag">BurpSuite</span>
           <span class="tag">Nmap</span>
+          <span class="tag">John The Ripper</span>
           <span class="tag">Wireshark</span>
           <span class="tag">pfSense</span>
-          <span class="tag">John The Ripper</span>
+          <span class="tag">VirtualBox</span>
+          <span class="tag">QEMU/KVM</span>
         </div>
       </div>
 
       <div class="skill-group">
-        <div class="skill-label">Development & IT</div>
+        <div class="skill-label">Development</div>
         <div class="tags">
           <span class="tag">Python</span>
           <span class="tag">Django</span>
-          <span class="tag">SQL / MySQL</span>
-          <span class="tag">HTML / CSS</span>
-          <span class="tag">VirtualBox / QEMU</span>
-          <span class="tag">Windows Server</span>
+          <span class="tag">SQL</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-label">IT Operations</div>
+        <div class="tags">
+          <span class="tag">System Diagnostics</span>
+          <span class="tag">Root-Cause Analysis</span>
+          <span class="tag">IT Troubleshooting</span>
+          <span class="tag">Preventive Maintenance</span>
+          <span class="tag">Hardware/Software Config</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-label">Languages</div>
+        <div class="tags">
+          <span class="tag">English (Native)</span>
+          <span class="tag">Melayu (Native)</span>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h2>Projects</h2>
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2>Experience</h2>
 
-      <article class="project">
-        <div class="project-header">
-          <span class="project-title">Home SOC Lab — Threat Detection & IR</span>
-          <span class="project-category">Cybersecurity</span>
+      <article class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Penetration Tester</span>
+          <span class="entry-meta">Internship · 6 Months</span>
         </div>
-        <p class="project-desc">
-          Virtualized SOC lab for simulating attacks and practicing incident response workflows.
-        </p>
-        <p class="project-bullet">
-          Deployed Security Onion + Wazuh for centralized logging and IDS; documented
-          10 incident response playbooks and 20+ simulated attack vectors.
-        </p>
+        <div class="entry-sub">Pusat Ekosistem Digital</div>
+        <ul>
+          <li>Uncovered 15+ critical system vulnerabilities across internal network architectures by conducting comprehensive risk assessments, reducing potential data exposure risks by 40%.</li>
+          <li>Orchestrated real-world attack simulations (phishing campaigns, privilege escalation) to evaluate defense mechanisms, producing 5 incident response playbooks.</li>
+          <li>Architected standardized vulnerability documentation and risk reporting framework, improving reporting consistency by 25% and accelerating patch deployment from 14 days to 10 days.</li>
+        </ul>
         <div class="tags">
-          <span class="tag">Security Onion</span>
-          <span class="tag">Wazuh</span>
-          <span class="tag">pfSense</span>
-          <span class="tag">Kali Linux</span>
-          <span class="tag">Wireshark</span>
+          <span class="tag">Penetration Testing</span>
+          <span class="tag">Risk Assessment</span>
+          <span class="tag">Incident Response</span>
+          <span class="tag">Metasploit</span>
+          <span class="tag">BurpSuite</span>
         </div>
       </article>
 
-      <article class="project">
-        <div class="project-header">
-          <span class="project-title">Python Log Analyzer & Alerting Tool</span>
-          <span class="project-category">Automation</span>
+      <article class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Food Service Specialist</span>
+          <span class="entry-meta">Part-time</span>
         </div>
-        <p class="project-desc">
-          Parses system and web server logs, flags anomalies, and sends real-time alerts.
-        </p>
-        <p class="project-bullet">
-          Reduced manual log review time by 70% with regex-based detection of failed
-          logins, privilege escalation, and suspicious IP activity.
-        </p>
+        <div class="entry-sub">Penang Food Fantasy (PFF)</div>
+        <ul>
+          <li>Oversaw daily customer service operations during peak hours (12+ hours), de-escalating 50+ complaints per shift and maintaining a 98% customer satisfaction rating.</li>
+          <li>Diagnosed and rectified Point-of-Sale (POS) system malfunctions in real time, achieving 99.9% system uptime during peak operational hours.</li>
+          <li>Translated complex technical POS issues into clear, actionable language for non-technical restaurant management, bridging operations and IT support.</li>
+        </ul>
         <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Regex</span>
-          <span class="tag">Pandas</span>
-          <span class="tag">SMTP</span>
-          <span class="tag">Linux</span>
+          <span class="tag">IT Troubleshooting</span>
+          <span class="tag">Customer Service</span>
+          <span class="tag">Hardware Repair</span>
+          <span class="tag">Communication</span>
         </div>
       </article>
 
-      <article class="project">
-        <div class="project-header">
-          <span class="project-title">Active Directory Home Lab</span>
-          <span class="project-category">IT Support</span>
+      <article class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Full-Stack Developer</span>
+          <span class="entry-meta">Final Year Project</span>
         </div>
-        <p class="project-desc">
-          Windows Server AD environment simulating enterprise helpdesk and sysadmin tasks.
-        </p>
-        <p class="project-bullet">
-          Managed 50+ users across OUs, configured GPOs for password policy and drive
-          mapping, and documented SOPs for onboarding and offboarding.
-        </p>
-        <div class="tags">
-          <span class="tag">Windows Server</span>
-          <span class="tag">Active Directory</span>
-          <span class="tag">GPO</span>
-          <span class="tag">DNS</span>
-          <span class="tag">PowerShell</span>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-header">
-          <span class="project-title">SMB Vulnerability Assessment Report</span>
-          <span class="project-category">Cybersecurity</span>
-        </div>
-        <p class="project-desc">
-          Full vulnerability assessment on a simulated small business network, delivered
-          as a client-ready report.
-        </p>
-        <p class="project-bullet">
-          Identified 15+ CVSS-scored findings using Nmap, Nessus, and OpenVAS; mapped
-          to MITRE ATT&CK with prioritized remediation guidance.
-        </p>
-        <div class="tags">
-          <span class="tag">Nmap</span>
-          <span class="tag">Nessus</span>
-          <span class="tag">OpenVAS</span>
-          <span class="tag">CVSS</span>
-          <span class="tag">MITRE ATT&CK</span>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-header">
-          <span class="project-title">IT Asset Management Dashboard</span>
-          <span class="project-category">Web Development</span>
-        </div>
-        <p class="project-desc">
-          Django web app to track hardware, licenses, warranty status, and maintenance history.
-        </p>
-        <p class="project-bullet">
-          Built role-based access, CSV export, and warranty expiry alerts for a
-          simulated 100+ asset environment.
-        </p>
+        <div class="entry-sub">SUKSIS Evaluation Management System</div>
+        <ul>
+          <li>Designed and deployed a full-stack web application (Django/SQL) from the ground up to automate semester assessment tracking for 200+ students.</li>
+          <li>Eliminated a 30% margin of manual data entry errors through automated calculation algorithms, reducing result processing from 5 days to 3 days.</li>
+          <li>Developed user guides and facilitated hands-on training for 15 non-technical administrative staff, ensuring 100% system adoption within the first week.</li>
+        </ul>
         <div class="tags">
           <span class="tag">Django</span>
-          <span class="tag">SQLite</span>
-          <span class="tag">Bootstrap</span>
-          <span class="tag">Chart.js</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Python</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">Training</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2>Education</h2>
+
+      <article class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Bachelor's Degree in Computer Science</span>
+          <span class="entry-meta">2021 – 2026</span>
+        </div>
+        <div class="entry-sub">Universiti Malaysia Terengganu (UMT) · Maritime Informatics (Honours) · CGPA: 2.91</div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Diploma in Computer Science</span>
+          <span class="entry-meta">2018 – 2020</span>
+        </div>
+        <div class="entry-sub">Kolej Professional MARA Beranang · CGPA: 2.85</div>
+      </article>
+    </section>
+
+    <!-- PROJECTS & LABS -->
+    <section id="projects">
+      <h2>Projects & Security Labs</h2>
+
+      <article class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Hands-On Security Lab</span>
+          <span class="entry-meta">Personal Project</span>
+        </div>
+        <ul>
+          <li>Designed and configured a virtualized home lab environment with firewall rules (pfSense) and network segmentation.</li>
+          <li>Deployed Wireshark for intrusion detection and traffic analysis, identifying malicious patterns to strengthen defensive strategies.</li>
+          <li>Demonstrates proactive initiative and commitment to practical, hands-on cybersecurity learning.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">pfSense</span>
+          <span class="tag">Wireshark</span>
+          <span class="tag">Network Segmentation</span>
+          <span class="tag">Virtualization</span>
         </div>
       </article>
     </section>
